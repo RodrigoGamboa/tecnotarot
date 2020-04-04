@@ -17,9 +17,9 @@ function setup() {
 function draw() {
     //fill(0);
 
-    img1_0.resize(width/2, 0);
+    img1_0.resize(0, height/2);
     image(img1_0, width/2, height/2);
-    ellipse(mouseX, mouseY, 50, 50);
+    ellipse(random(width), random(height), 50, 50);
 }
 
 function windowResized() {
