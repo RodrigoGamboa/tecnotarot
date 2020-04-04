@@ -8,6 +8,7 @@ function setup() {
 
 function draw() {
     //fill(0);
+    canvas.background(255, 230, 0);
     ellipse(mouseX, mouseY, 50, 50);
 }
 
