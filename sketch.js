@@ -13,5 +13,5 @@ function draw() {
     //fill(0);
     //ellipse(mouseX, mouseY, 50, 50);
     var level = mic.getLevel();
-    ellipse(width/2, height/2, level*100);
+    ellipse(width/2, height/2, level*width);
 }
