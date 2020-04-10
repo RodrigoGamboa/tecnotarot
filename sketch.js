@@ -68,7 +68,7 @@ function draw() {
 
     inferiorMargin = (windowHeight - imgsF[numCard].height) / 2;
 
-    crystal.resize(0, inferiorMargin*0.5);
+    crystal.resize(0, inferiorMargin*0.8);
     image(crystal, windowWidth/2, windowHeight - inferiorMargin/2);
 
     if(numCard > 0) {
