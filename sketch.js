@@ -2,8 +2,8 @@ var canvas;
 let img1_0, img1_1;
 
 function preload() {
-  img1_0 = loadImage('images/TecnoTarot_1.0.png');
-  img1_1 = loadImage('images/TecnoTarot_1.1.png');
+  img1_0 = loadImage('images/tecno2.png');
+  img1_1 = loadImage('images/tecno2.png');
 }
 
 function setup() {
@@ -15,11 +15,9 @@ function setup() {
 }
 
 function draw() {
-    //fill(0);
-
     img1_0.resize(0, height/2);
     image(img1_0, width/2, height/2);
-    ellipse(random(width), random(height), 50, 50);
+    //ellipse(random(width), random(height), 50, 50);
 }
 
 function windowResized() {
