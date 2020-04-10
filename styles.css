@@ -1,0 +1,23 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+  background: white;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  background: black;
+}
+
+a:active {
+  text-decoration: underline;
+}

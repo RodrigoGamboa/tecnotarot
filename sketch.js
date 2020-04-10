@@ -1,7 +1,6 @@
 var canvas;
 let imgsF = [];
 let imgsB = [];
-//let button;
 let numCard = 0;
 let appearVal = 255;
 let introCard = true;
@@ -42,12 +41,6 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
-
-    //button = createButton('suerte!');
-    //button.position();
-    //button.resize(100, 100);
-    //button.mousePressed(randomCard);
-
     imageMode(CENTER);
     rectMode(CENTER);
     noStroke();
