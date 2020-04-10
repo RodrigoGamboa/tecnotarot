@@ -18,7 +18,7 @@ function setup() {
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
 
-    button = createButton('click me');
+    button = createButton('suerte!');
     //button.position();
     //button.resize(100, 100);
     button.mousePressed(randomCard);
@@ -30,34 +30,27 @@ function setup() {
 }
 
 function draw() {
-
-    //imgs[0].resize(0, 3*windowHeight/4);
-    //tint(255, 20);
     if(introCard == true) {
+      imgs[0].resize(0, 3*windowHeight/4);
       image(imgs[0], windowWidth/2, windowHeight/2);
-      fill(255, 230, 0, appearVal);
-      rect(windowWidth/2, windowHeight/2, imgs[0].width, imgs[0].height);
+      //Velocidad de aparición en móvil es muy lenta. En pc está bien. Arreglar este problema antes de volver a colocar fill y rect.
+      //fill(255, 230, 0, appearVal);
+      //rect(windowWidth/2, windowHeight/2, imgs[0].width, imgs[0].height);
       appearVal = appearVal - 1;
       if(appearVal < 0)
         introCard == false;
     }
-    /*
-    imgs[val].resize(0, 3*windowHeight/4);
-    //tint(255, 255);
-    //image(imgs[val], windowWidth/2, windowHeight/2);
-    if(transparency < 255) {
-        transparency++;
-    } else {
-      transparency = 0;
+
+    if(val > 0) {
+      imgs[val].resize(0, 3*windowHeight/4);
+      image(imgs[val], windowWidth/2, windowHeight/2);
+
     }
-    //fill(255, 230, 0, transparency);
-    //rect(0, 0, windowWidth, windowHeight);
-    */
 }
 
 function randomCard() {
-  //val = int(random(0,14));
-  val = random(255);
+  val = int(random(1, 2));
+  //val = 10;
 }
 
 function windowResized() {
