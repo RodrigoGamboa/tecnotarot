@@ -2,12 +2,13 @@ var canvas;
 let imgsF = [];
 let imgsB = [];
 let button;
-let val = 0;
-let transparency = 0;
+let numCard = 0;
 let appearVal = 255;
 let introCard = true;
+let flipCard = false;
 
 function preload() {
+  crystal = loadImage('images/CrystalBall.png');
   imgsF[0] = loadImage('images/TecnoTarot_1.0.png');
   imgsF[1] = loadImage('images/TecnoTarot_2.0.png');
   imgsF[2] = loadImage('images/TecnoTarot_3.0.png');
@@ -21,6 +22,19 @@ function preload() {
   imgsF[10] = loadImage('images/TecnoTarot_11.0.png');
   imgsF[11] = loadImage('images/TecnoTarot_12.0.png');
   imgsF[12] = loadImage('images/TecnoTarot_13.0.png');
+  imgsB[0] = loadImage('images/TecnoTarot_1.1.png');
+  imgsB[1] = loadImage('images/TecnoTarot_2.1.png');
+  imgsB[2] = loadImage('images/TecnoTarot_3.1.png');
+  imgsB[3] = loadImage('images/TecnoTarot_4.1.png');
+  imgsB[4] = loadImage('images/TecnoTarot_5.1.png');
+  imgsB[5] = loadImage('images/TecnoTarot_6.1.png');
+  imgsB[6] = loadImage('images/TecnoTarot_7.1.png');
+  imgsB[7] = loadImage('images/TecnoTarot_8.1.png');
+  imgsB[8] = loadImage('images/TecnoTarot_9.1.png');
+  imgsB[9] = loadImage('images/TecnoTarot_10.1.png');
+  imgsB[10] = loadImage('images/TecnoTarot_11.1.png');
+  imgsB[11] = loadImage('images/TecnoTarot_12.1.png');
+  imgsB[12] = loadImage('images/TecnoTarot_13.1.png');
 }
 
 function setup() {
@@ -51,18 +65,29 @@ function draw() {
         introCard == false;
     }
 
-    if(val > 0) {
-      imgsF[val].resize(0, 3*windowHeight/4);
-      image(imgsF[val], windowWidth/2, windowHeight/2);
+    if(numCard > 0) {
+      imgsF[numCard].resize(0, 3*windowHeight/4);
+      image(imgsF[numCard], windowWidth/2, windowHeight/2);
+    }
 
+    if(flipCard == true) {
+      imgsB[numCard].resize(0, 3*windowHeight/4);
+      image(imgsB[numCard], windowWidth/2, windowHeight/2);
     }
 }
 
 function randomCard() {
-  val = int(random(1, 13));
+  numCard = int(random(1, 13));
+  flipCard = false;
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   canvas.background(255, 230, 0);
+}
+
+function mouseClicked() {
+  if(mouseX > (windowWidth/2)) {
+    flipCard = true;
+  }
 }
