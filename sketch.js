@@ -1,11 +1,12 @@
 var canvas;
 let imgsF = [];
 let imgsB = [];
-let button;
+//let button;
 let numCard = 0;
 let appearVal = 255;
 let introCard = true;
 let flipCard = false;
+let inferiorMargin = 0;
 
 function preload() {
   crystal = loadImage('images/CrystalBall.png');
@@ -42,10 +43,10 @@ function setup() {
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
 
-    button = createButton('suerte!');
+    //button = createButton('suerte!');
     //button.position();
     //button.resize(100, 100);
-    button.mousePressed(randomCard);
+    //button.mousePressed(randomCard);
 
     imageMode(CENTER);
     rectMode(CENTER);
@@ -55,8 +56,8 @@ function setup() {
 
 function draw() {
     if(introCard == true) {
-      imgsF[0].resize(0, 3*windowHeight/4);
-      image(imgsF[0], windowWidth/2, windowHeight/2);
+      imgsF[numCard].resize(0, 3*windowHeight/4);
+      image(imgsF[numCard], windowWidth/2, windowHeight/2);
       //Velocidad de aparición en móvil es muy lenta. En pc está bien. Arreglar este problema antes de volver a colocar fill y rect.
       //fill(255, 230, 0, appearVal);
       //rect(windowWidth/2, windowHeight/2, imgs[0].width, imgs[0].height);
@@ -64,6 +65,11 @@ function draw() {
       if(appearVal < 0)
         introCard == false;
     }
+
+    inferiorMargin = (windowHeight - imgsF[numCard].height) / 2;
+
+    crystal.resize(0, inferiorMargin*0.5);
+    image(crystal, windowWidth/2, windowHeight - inferiorMargin/2);
 
     if(numCard > 0) {
       imgsF[numCard].resize(0, 3*windowHeight/4);
@@ -76,18 +82,22 @@ function draw() {
     }
 }
 
-function randomCard() {
-  numCard = int(random(1, 13));
-  flipCard = false;
-}
-
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   canvas.background(255, 230, 0);
 }
 
 function mouseClicked() {
-  if(mouseX > (windowWidth/2)) {
-    flipCard = true;
+  if(mouseX > (windowWidth/2 - imgsF[numCard].width/2) && mouseX < (windowWidth/2 + imgsF[numCard].width/2)) {
+    if(mouseY > (windowHeight/2 - imgsF[numCard].height/2) && mouseY < (windowHeight/2 + imgsF[numCard].height/2)) {
+      flipCard = true;
+    }
+  }
+
+  if(mouseX > (windowWidth/2 - crystal.width/2) && mouseX < (windowWidth/2 + crystal.width/2)) {
+    if(mouseY > (windowHeight - inferiorMargin/2 - crystal.height/2) && mouseY < (windowHeight - inferiorMargin/2 + crystal.height)) {
+      numCard = int(random(1, 13));
+      flipCard = false;
+    }
   }
 }
