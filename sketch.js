@@ -1,5 +1,6 @@
 var canvas;
-let imgs = [];
+let imgsF = [];
+let imgsB = [];
 let button;
 let val = 0;
 let transparency = 0;
@@ -7,10 +8,19 @@ let appearVal = 255;
 let introCard = true;
 
 function preload() {
-  imgs[0] = loadImage('images/TecnoTarot_1.0.png');
-  imgs[1] = loadImage('images/TecnoTarot_2.0.png');
-  imgs[2] = loadImage('images/TecnoTarot_3.0.png');
-  imgs[10] = loadImage('images/TecnoTarot_1.1.png');
+  imgsF[0] = loadImage('images/TecnoTarot_1.0.png');
+  imgsF[1] = loadImage('images/TecnoTarot_2.0.png');
+  imgsF[2] = loadImage('images/TecnoTarot_3.0.png');
+  imgsF[3] = loadImage('images/TecnoTarot_4.0.png');
+  imgsF[4] = loadImage('images/TecnoTarot_5.0.png');
+  imgsF[5] = loadImage('images/TecnoTarot_6.0.png');
+  imgsF[6] = loadImage('images/TecnoTarot_7.0.png');
+  imgsF[7] = loadImage('images/TecnoTarot_8.0.png');
+  imgsF[8] = loadImage('images/TecnoTarot_9.0.png');
+  imgsF[9] = loadImage('images/TecnoTarot_10.0.png');
+  imgsF[10] = loadImage('images/TecnoTarot_11.0.png');
+  imgsF[11] = loadImage('images/TecnoTarot_12.0.png');
+  imgsF[12] = loadImage('images/TecnoTarot_13.0.png');
 }
 
 function setup() {
@@ -31,8 +41,8 @@ function setup() {
 
 function draw() {
     if(introCard == true) {
-      imgs[0].resize(0, 3*windowHeight/4);
-      image(imgs[0], windowWidth/2, windowHeight/2);
+      imgsF[0].resize(0, 3*windowHeight/4);
+      image(imgsF[0], windowWidth/2, windowHeight/2);
       //Velocidad de aparición en móvil es muy lenta. En pc está bien. Arreglar este problema antes de volver a colocar fill y rect.
       //fill(255, 230, 0, appearVal);
       //rect(windowWidth/2, windowHeight/2, imgs[0].width, imgs[0].height);
@@ -42,15 +52,14 @@ function draw() {
     }
 
     if(val > 0) {
-      imgs[val].resize(0, 3*windowHeight/4);
-      image(imgs[val], windowWidth/2, windowHeight/2);
+      imgsF[val].resize(0, 3*windowHeight/4);
+      image(imgsF[val], windowWidth/2, windowHeight/2);
 
     }
 }
 
 function randomCard() {
-  val = int(random(1, 2));
-  //val = 10;
+  val = int(random(1, 13));
 }
 
 function windowResized() {
