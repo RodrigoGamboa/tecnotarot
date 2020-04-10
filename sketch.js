@@ -44,7 +44,7 @@ function setup() {
     imageMode(CENTER);
     rectMode(CENTER);
     noStroke();
-    canvas.background(255, 230, 0);
+    //canvas.background(255, 230, 0);
 }
 
 function draw() {
@@ -77,7 +77,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  canvas.background(255, 230, 0);
+  //canvas.background(255, 230, 0);
 }
 
 function mouseClicked() {

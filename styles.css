@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 230, 0);
 }
 
 a:link {
@@ -10,6 +11,8 @@ a:link {
 
 a:visited {
   text-decoration: none;
+  color: black;
+  background: white;
 }
 
 a:hover {
