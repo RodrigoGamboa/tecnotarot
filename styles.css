@@ -1,3 +1,5 @@
+/* Tecnotarot css code version p5.js */
+/*
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: rgb(255, 230, 0);
@@ -23,4 +25,55 @@ a:hover {
 
 a:active {
   text-decoration: underline;
+}
+*/
+
+/* Tecnotarot css code version javascript */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(255, 230, 0);
+  flex-direction: column;
+}
+
+.general-info {
+  background-color: lightblue;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 15px;
+}
+
+.main-title {
+
+}
+
+.cards {
+  background-color: white;
+}
+
+.cards {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24%;
+}
+
+.action-icons {
+  background-color: rgb(255, 0, 0);
+  display: flex;
+  margin: auto;
+  min-height: 15vh;
+  align-items: center;
 }
